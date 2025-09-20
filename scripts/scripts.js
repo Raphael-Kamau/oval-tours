@@ -1,9 +1,9 @@
 const heroSection = document.querySelector('.hero-section');
 const images = [
-  '/assets/beach.png',
-  '/assets/mountain.png',
-  '/assets/bay.png',
-  '/assets/safari.png'
+  '../assets/beach.png',
+  '../assets/mountain.png',
+  '../assets/bay.png',
+  '../assets/safari.png'
 ];
 
 let currentIndex = 0;
