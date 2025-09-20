@@ -1,38 +1,54 @@
-# 🌍 Oval Tours — Contact Form Backend
+# 🌍 Oval Tours — Travel Experience Platform
 
-Oval Tours is a modular Flask-based backend for handling contact form submissions securely and scalably. Messages are stored in a Railway-hosted MySQL database, with optional email notifications via SMTP.
+Oval Tours is a responsive, modular travel website designed to showcase global destinations and handle user inquiries through a secure contact form. Built with HTML, CSS, JavaScript, and Flask, it integrates cloud-based MySQL storage via Railway for scalable backend operations.
 
 ---
 
 ## 🚀 Features
 
-- ✅ Contact form API (`/api/contact`)
-- ✅ Cloud-based MySQL storage (Railway)
-- ✅ Automatic table creation
-- ✅ Frontend integration via `fetch()`
-- ✅ Optional SMTP email notifications
-- ✅ Modular config and onboarding-friendly structure
+- 🖼️ Hero section with rotating background images
+- 
+- 📍 Destination highlights (e.g. Tokyo, Paris, Safari)
+- <img width="1291" height="472" alt="image" src="https://github.com/user-attachments/assets/12c20a59-e74e-47a5-b9d7-c4c45969874e" />
+
+- 📬 Contact form 
+- <img width="872" height="586" alt="image" src="https://github.com/user-attachments/assets/e66ccd4d-8c03-48c4-9e7f-227d9a902ab3" />
+
+- 📱 Responsive layout with mobile navigation toggle
 
 ---
 
 ## 🧱 Tech Stack
 
-- **Backend**: Flask (Python)
-- **Database**: MySQL (hosted on Railway)
-- **Frontend**: HTML/CSS/JS (form + hero section)
-- **Email**: SMTP (Gmail-compatible, optional)
+| Layer       | Tools Used                          |
+|-------------|-------------------------------------|
+| Frontend    | HTML, CSS, JavaScript               |
+| UI Styling  | Custom styles + Bootstrap (optional)|
+| Backend     | Flask (Python)                      |
+| Database    | MySQL (hosted on Railway)           |
+| Deployment  | Railway (backend), GitHub Pages or local (frontend) |
 
 ---
 
-## 📁 Folder Structure
+## 📁 Project Structure
 
 ```
 oval-tours/
-├── app.py           # Flask app entry point
-├── db.py            # MySQL logic and table creation
-├── config.py        # DB and SMTP credentials
-├── static/          # Frontend assets (images, CSS, JS)
-└── templates/       # HTML pages (optional)
+├── assets/              # Images and branding
+│   ├── beach.png
+│   ├── mountain.png
+│   ├── safari.png
+│   └── ...
+├── scripts/             # JavaScript and styles
+│   └── scripts.js
+├── back-end/            # Flask backend
+│   ├── app.py
+│   ├── db.py
+│   └── config.py
+├── index.html
+├── contact.html
+├── about.html
+├── README.md
 ```
 
 ---
@@ -42,19 +58,19 @@ oval-tours/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/Raphael-Kamau/oval-tours.git
+git clone https://github.com/your-username/oval-tours.git
 cd oval-tours
 ```
 
-### 2. Install dependencies
+### 2. Install backend dependencies
 
 ```bash
 pip install flask mysql-connector-python
 ```
 
-### 3. Configure your credentials
+### 3. Configure your backend
 
-Edit `config.py`:
+Edit `config.py` with Railway credentials:
 
 ```python
 DB_HOST = 'your-railway-host'
@@ -63,6 +79,7 @@ DB_USER = 'your-db-user'
 DB_PASS = 'your-db-password'
 DB_NAME = 'your-db-name'
 
+# Optional SMTP settings
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 465
 SMTP_USER = 'your-email@gmail.com'
@@ -70,9 +87,7 @@ SMTP_PASS = 'your-app-password'
 RECEIVER_EMAIL = 'your-email@gmail.com'
 ```
 
-> You can skip SMTP if you're only using database storage.
-
-### 4. Run the server
+### 4. Run the Flask server
 
 ```bash
 python app.py
@@ -80,7 +95,7 @@ python app.py
 
 ---
 
-## 📬 API Endpoint
+## 📬 Contact Form API
 
 ### `POST /api/contact`
 
@@ -104,22 +119,42 @@ python app.py
 
 ## 🧪 Testing
 
-- Submit the form from your frontend
-- Check Railway’s MySQL dashboard → Query: `SELECT * FROM messages;`
+- Open `contact.html` in your browser
+- Fill out the form and submit
+- Check Railway MySQL dashboard → Query: `SELECT * FROM messages;`
 - (Optional) Check your email inbox if SMTP is enabled
 
 ---
 
-## Deployment 
-- GitHub pages
+## 🖼️ Hero Section Background Rotation
 
+In `scripts/scripts.js`, images are loaded from the `assets/` folder using:
+
+```js
+const images = [
+  '../assets/beach.png',
+  '../assets/mountain.png',
+  '../assets/bay.png',
+  '../assets/safari.png'
+];
+```
+
+Background changes every 5 seconds using:
+
+```js
+heroSection.style.backgroundImage = `url('${images[currentIndex]}')`;
+```
+
+---
 
 ## 🧠 Future Enhancements
 
 - Admin dashboard to view messages
+- Tour booking system with calendar
 - CAPTCHA or honeypot spam protection
 - Email reply automation
-- Tour booking integration
+- Multi-language support
+- AI-powered itinerary suggestions
 
 ---
 
@@ -135,3 +170,4 @@ Web Developer & Platform Architect
 ## 📄 License
 
 MIT — free to use, modify, and distribute.
+```
