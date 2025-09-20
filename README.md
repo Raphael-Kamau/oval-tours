@@ -6,15 +6,17 @@ Oval Tours is a responsive, modular travel website designed to showcase global d
 
 ## 🚀 Features
 
-- 🖼️ Hero section with rotating background images
-- 
+- 🖼️ Hero section with image carousel
+ <img width="1347" height="640" alt="image" src="https://github.com/user-attachments/assets/73433407-c073-4ba0-8b86-8e4f5b4245e6" />
+
 - 📍 Destination highlights (e.g. Tokyo, Paris, Safari)
-- <img width="1291" height="472" alt="image" src="https://github.com/user-attachments/assets/12c20a59-e74e-47a5-b9d7-c4c45969874e" />
+ <img width="1291" height="472" alt="image" src="https://github.com/user-attachments/assets/12c20a59-e74e-47a5-b9d7-c4c45969874e" />
 
 - 📬 Contact form 
-- <img width="872" height="586" alt="image" src="https://github.com/user-attachments/assets/e66ccd4d-8c03-48c4-9e7f-227d9a902ab3" />
+ <img width="872" height="586" alt="image" src="https://github.com/user-attachments/assets/e66ccd4d-8c03-48c4-9e7f-227d9a902ab3" />
 
 - 📱 Responsive layout with mobile navigation toggle
+ <img width="505" height="544" alt="image" src="https://github.com/user-attachments/assets/c1918f14-5384-4f10-a486-8d99e41431e5" />
 
 ---
 
@@ -23,7 +25,7 @@ Oval Tours is a responsive, modular travel website designed to showcase global d
 | Layer       | Tools Used                          |
 |-------------|-------------------------------------|
 | Frontend    | HTML, CSS, JavaScript               |
-| UI Styling  | Custom styles + Bootstrap (optional)|
+| UI Styling  | Custom styles                       |
 | Backend     | Flask (Python)                      |
 | Database    | MySQL (hosted on Railway)           |
 | Deployment  | Railway (backend), GitHub Pages or local (frontend) |
@@ -123,27 +125,6 @@ python app.py
 - Fill out the form and submit
 - Check Railway MySQL dashboard → Query: `SELECT * FROM messages;`
 - (Optional) Check your email inbox if SMTP is enabled
-
----
-
-## 🖼️ Hero Section Background Rotation
-
-In `scripts/scripts.js`, images are loaded from the `assets/` folder using:
-
-```js
-const images = [
-  '../assets/beach.png',
-  '../assets/mountain.png',
-  '../assets/bay.png',
-  '../assets/safari.png'
-];
-```
-
-Background changes every 5 seconds using:
-
-```js
-heroSection.style.backgroundImage = `url('${images[currentIndex]}')`;
-```
 
 ---
 
